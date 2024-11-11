@@ -180,7 +180,6 @@ const cards = [
         icon: 'mdi-heart-pulse',
         description: 'Check the status of system components.',
     },
-    // Add more cards as needed
 ];
 
 // Watch for screen size changes to adjust the drawer state

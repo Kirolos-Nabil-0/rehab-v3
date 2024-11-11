@@ -12,6 +12,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.7.0",
     "nuxt": "^3.14.159",
     "nuxt-api-party": "^2.0.11",
     "vue": "latest",

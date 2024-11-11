@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     },
     "@formkit/auto-animate/nuxt",
     "nuxt-api-party",
+    "@pinia/nuxt",
   ],
   apiParty: {
     server: {
