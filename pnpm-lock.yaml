@@ -17,6 +17,9 @@ importers:
       nuxt:
         specifier: ^3.14.159
         version: 3.14.159(@parcel/watcher@2.5.0)(@types/node@22.9.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.25.0)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))
+      nuxt-api-party:
+        specifier: ^2.0.11
+        version: 2.0.11(magicast@0.3.5)(openapi-typescript@7.4.3(typescript@5.6.3))(rollup@4.25.0)
       vue:
         specifier: latest
         version: 3.5.12(typescript@5.6.3)
@@ -2118,6 +2121,11 @@ packages:
     engines: {node: ^16.10.0 || >=18.0.0}
     hasBin: true
 
+  nuxt-api-party@2.0.11:
+    resolution: {integrity: sha512-P3VfzjGeD+YCGgC0GwYZ2970Qd/mDMDniRLVxC2kCnxMYaKbT7kdb8OyuEkRh9Thn2S0W+ILZuz+jWOwudi9/g==}
+    peerDependencies:
+      openapi-typescript: ^5 || ^6 || ^7
+
   nuxt@3.14.159:
     resolution: {integrity: sha512-1xz6AfFkun+byUIkBNX3/CTOTShPRFJe0y9HqWZX2aV9xdoz5ByeaHZfktokhOOSbvabjDyzkTbbHh3V673qHw==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -2164,6 +2172,9 @@ packages:
   open@8.4.2:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
+
+  openapi-typescript-helpers@0.0.13:
+    resolution: {integrity: sha512-z44WK2e7ygW3aUtAtiurfEACohf/Qt9g6BsejmIYgEoY4REHeRzgFJmO3ium0libsuzPc145I+8lE9aiiZrQvQ==}
 
   openapi-typescript@7.4.3:
     resolution: {integrity: sha512-xTIjMIIOv9kNhsr8JxaC00ucbIY/6ZwuJPJBZMSh5FA2dicZN5uM805DWVJojXdom8YI4AQTavPDPHMx/3g0vQ==}
@@ -5382,6 +5393,24 @@ snapshots:
 
   nuxi@3.15.0: {}
 
+  nuxt-api-party@2.0.11(magicast@0.3.5)(openapi-typescript@7.4.3(typescript@5.6.3))(rollup@4.25.0):
+    dependencies:
+      '@nuxt/kit': 3.14.159(magicast@0.3.5)(rollup@4.25.0)
+      defu: 6.1.4
+      jiti: 2.4.0
+      ofetch: 1.4.1
+      ohash: 1.1.4
+      openapi-typescript: 7.4.3(typescript@5.6.3)
+      openapi-typescript-helpers: 0.0.13
+      pathe: 1.1.2
+      scule: 1.3.0
+      ufo: 1.5.4
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - webpack-sources
+
   nuxt@3.14.159(@parcel/watcher@2.5.0)(@types/node@22.9.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.25.0)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0)):
     dependencies:
       '@nuxt/devalue': 2.0.2
@@ -5539,6 +5568,8 @@ snapshots:
       define-lazy-prop: 2.0.0
       is-docker: 2.2.1
       is-wsl: 2.2.0
+
+  openapi-typescript-helpers@0.0.13: {}
 
   openapi-typescript@7.4.3(typescript@5.6.3):
     dependencies:

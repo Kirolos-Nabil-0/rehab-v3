@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.2",
     "@mdi/font": "^7.4.47",
     "nuxt": "^3.14.159",
+    "nuxt-api-party": "^2.0.11",
     "vue": "latest",
     "vue-router": "latest"
   },

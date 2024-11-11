@@ -33,7 +33,22 @@ export default defineNuxtConfig({
       });
     },
     "@formkit/auto-animate/nuxt",
+    "nuxt-api-party",
   ],
+  apiParty: {
+    server: {
+      basePath: "https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/",
+    },
+    endpoints: {
+      rehabAPi: {
+        url: "https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/",
+        headers: {
+          Authorization: `Bearer`,
+        },
+      },
+    },
+  },
+
   vite: {
     vue: {
       template: {
