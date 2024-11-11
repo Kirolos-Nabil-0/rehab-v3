@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-const useHotelStore = defineStore("hotel", () => {
+export const useHotelStore = defineStore("hotel", () => {
   const hotels = ref([]);
   const selectedHotel = ref(null);
 
