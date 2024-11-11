@@ -1,0 +1,67 @@
+{
+  "hotels": [
+    {
+      "hotel_id": 1,
+      "hotel_location": "Makkah",
+      "hotel_name": "some hotel",
+      "hotel_category": "luxury"
+    },
+    {
+      "hotel_id": 2,
+      "hotel_location": "Madinnah",
+      "hotel_name": "hotel2",
+      "hotel_category": "luxury"
+    }
+  ],
+  "camps": [
+    {
+      "camp_id": 1,
+      "camp_name": "معيصم",
+      "camp_service_price": 100,
+      "camp_kidanah_price": 200
+    },
+    {
+      "camp_id": 2,
+      "camp_name": "الكبش",
+      "camp_service_price": 100,
+      "camp_kidanah_price": 200
+    }
+  ],
+  "routes": [
+    {
+      "route_id": 1,
+      "camp_id": 1,
+      "camp_route_price": 100
+    },
+    {
+      "route_id": 2,
+      "camp_id": 2,
+      "camp_route_price": 200
+    },
+    {
+      "route_id": 3,
+      "camp_id": 1,
+      "camp_route_price": 100
+    },
+    {
+      "route_id": 4,
+      "camp_id": 2,
+      "camp_route_price": 200
+    }
+  ],
+  "contracts": [
+    {
+      "hotel_location": "Makkah",
+      "hotel_name": "some hotel",
+      "Start_date": "2021-01-01",
+      "End_date": "2021-01-10",
+      "double_rooms": 10,
+      "quadruple_rooms": 10,
+      "triple_rooms": 10,
+      "double_rooms_price": 100,
+      "quadruple_rooms_price": 200,
+      "triple_rooms_price": 300,
+      "food_price": 100
+    }
+  ]
+}
