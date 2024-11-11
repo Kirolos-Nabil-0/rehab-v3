@@ -1,3 +1,5 @@
+// plugins/vuetify.js
+
 import { defineNuxtPlugin } from "#app";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
@@ -8,7 +10,7 @@ import { VTimePicker } from "vuetify/labs/VTimePicker";
 import "@mdi/font/css/materialdesignicons.css";
 import "vuetify/styles";
 
-export default defineNuxtPlugin((app) => {
+export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
     components: {
       ...components,
@@ -20,24 +22,24 @@ export default defineNuxtPlugin((app) => {
       defaultTheme: "premiumAdminTheme",
       themes: {
         premiumAdminTheme: {
-          dark: true,
+          dark: false, // Set to false if you want a light theme
           colors: {
             primary: "#C94F5D", // primary-color
             secondary: "#2B3151", // primary-color-text
             accent: "#5F7495", // description-color
             background: "#FFFFFF", // background-color
-            surface: "#F0F0F0", // wight-color as a surface
+            surface: "#F0F0F0", // white-color as a surface
             descriptionGray: "#B0B0B0", // description-color-gray
             primaryAlternative: "#C94F5D", // primary-color2
-            error: "#BF616A", // Retain as is
-            info: "#81A1C1", // Retain as is
-            success: "#A3BE8C", // Retain as is
-            warning: "#EBCB8B", // Retain as is
+            error: "#BF616A",
+            info: "#81A1C1",
+            success: "#A3BE8C",
+            warning: "#EBCB8B",
           },
         },
       },
     },
   });
 
-  app.vueApp.use(vuetify);
+  nuxtApp.vueApp.use(vuetify);
 });

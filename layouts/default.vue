@@ -207,10 +207,7 @@ watch(
     --muted-text-color: #757575;
 }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
+.default-layout {}
 
 /* Remove margins and border-radius */
 .v-navigation-drawer,
@@ -528,5 +525,25 @@ body {
         width: 48px;
         height: 48px;
     }
+}
+
+.v-application {
+    min-height: 100vh !important
+}
+
+.v-main {
+    flex: 1 0 auto !important
+}
+
+/* Optional: Adjust the main container to allow the background to show */
+.main-container {
+
+    background-image: url('/images/escheresque.png');
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* Optional: Overlay with a semi-transparent color */
+    background-color: rgba(255, 255, 255, 0.9);
 }
 </style>
