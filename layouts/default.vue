@@ -162,7 +162,7 @@ const handleMenuItemClick = () => {
     }
 };
 
-const notificationCount = ref(3); // Example notification count
+const notificationCount = ref(0); // Example notification count
 
 const cards = [
     {
