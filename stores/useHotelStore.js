@@ -23,7 +23,7 @@ export const useHotelStore = defineStore("hotel", () => {
 
       const data = await response.json();
       hotels.value = data;
-      console.log("Fetched hotels:", hotels.value); // Debug log
+      // console.log("Fetched hotels:", hotels.value); // Debug log
     } catch (err) {
       console.error("Error fetching hotels:", err);
       error.value = err.message;
@@ -48,7 +48,7 @@ export const useHotelStore = defineStore("hotel", () => {
 
       const data = await response.json();
       selectedHotel.value = data;
-      console.log("Fetched hotel:", selectedHotel.value); // Debug log
+      // console.log("Fetched hotel:", selectedHotel.value); // Debug log
     } catch (err) {
       console.error("Error fetching hotel:", err);
       error.value = err.message;

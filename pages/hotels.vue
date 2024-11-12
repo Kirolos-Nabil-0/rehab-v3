@@ -21,6 +21,10 @@ import { defineAsyncComponent } from 'vue';
 
 // Import HotelsTable as an async component
 const HotelsTable = defineAsyncComponent(() => import('@/components/HotelsTable.vue'));
+
+
+
+
 </script>
 
 <style scoped>

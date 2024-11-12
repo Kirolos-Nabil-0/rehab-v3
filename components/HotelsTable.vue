@@ -8,6 +8,11 @@
                 Add Hotel
             </v-btn>
         </v-card-title>
+        <!-- Info for keyboard shortcut -->
+        <v-card-subtitle>
+            <span class="shortcut-info">Press <strong>Ctrl+C</strong> to toggle the Add Hotel dialog.</span>
+        </v-card-subtitle>
+
         <v-data-table :headers="headers" :items="hotels" :items-per-page="5" class="hotels-table" hover>
             <template #header.hotel_name="{ header }">
                 <v-icon small class="mr-1">mdi-bed</v-icon>
@@ -46,6 +51,19 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { useHotelStore } from '@/stores/useHotelStore';
 import AddHotelDialog from './AddHotelDialog.vue';
 
+import { useMagicKeys } from '@vueuse/core'
+const keys = useMagicKeys()
+const CtrlC = keys['Ctrl+c']
+watch(CtrlC, (v) => {
+
+    if (v) {
+        if (isDialogOpen.value) {
+            isDialogOpen.value = false;
+        } else {
+            isDialogOpen.value = true;
+        }
+    }
+})
 const hotelStore = useHotelStore();
 const hotels = ref([]);
 let pollingIntervalId = null;
@@ -184,5 +202,12 @@ const deleteHotel = (hotel) => {
 .text-h6 {
     font-size: 24px;
     font-weight: bold;
+}
+
+.shortcut-info {
+    font-size: 14px;
+    color: #757575;
+    /* Grey color for subtle emphasis */
+    padding-left: 16px;
 }
 </style>
