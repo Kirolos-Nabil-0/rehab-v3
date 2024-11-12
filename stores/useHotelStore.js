@@ -1,43 +1,46 @@
 import { defineStore } from "pinia";
+import { ref } from "vue";
 
 export const useHotelStore = defineStore("hotel", () => {
   const hotels = ref([]);
   const selectedHotel = ref(null);
 
   const fetchHotels = async () => {
-    const { data, refresh, error, status, clear } = await useRehabAPiData(
-      "hotels",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    if (status.value === "success") {
+    try {
+      const data = await $fetch(
+        "https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/hotels"
+      );
       hotels.value = data;
-    } else {
+    } catch (error) {
       hotels.value = [];
     }
-    return { data, refresh, error, status, clear };
   };
 
   const fetchHotel = async (id) => {
-    const { data, refresh, error, status, clear } = await useRehabAPiData(
-      `hotels/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    if (status.value === "success") {
+    try {
+      const data = await $fetch(
+        `https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/hotels/${id}`
+      );
       selectedHotel.value = data;
-    } else {
+    } catch (error) {
       selectedHotel.value = null;
     }
-    return { data, refresh, error, status, clear };
+  };
+
+  const addHotel = async (hotel) => {
+    try {
+      const response = await $fetch(
+        "https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/hotels",
+        {
+          method: "POST",
+          body: JSON.stringify(hotel),
+        }
+      );
+      hotels.value.push(response);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return {
@@ -45,5 +48,6 @@ export const useHotelStore = defineStore("hotel", () => {
     selectedHotel,
     fetchHotels,
     fetchHotel,
+    addHotel,
   };
 });
