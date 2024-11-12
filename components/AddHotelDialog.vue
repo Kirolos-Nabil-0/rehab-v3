@@ -45,7 +45,7 @@
 
                             <span v-if="hotelCategoryError" class="error-message">{{
                                 hotelCategoryError
-                                }}</span>
+                            }}</span>
                         </div>
                     </transition-group>
                 </v-form>
@@ -214,7 +214,7 @@ const headerGradient = computed(() => {
 
 /* Close Button */
 .close-button {
-    color: var(--surface-color);
+    color: black;
 }
 
 /* Form Styling */
