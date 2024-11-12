@@ -128,16 +128,21 @@ const submitForm = async () => {
         try {
             await hotelStore.addHotel(hotel.value);
             showSnackbar.value = true;
+            //clear form and close dialog
+            resetForm();
             closeDialog();
         } catch (error) {
             console.error('Failed to add hotel:', error);
         } finally {
             isSubmitting.value = false;
         }
+        closeDialog();
+
     } else {
         // Trigger validation
         hotelCategoryError.value = 'Category is required';
     }
+
 };
 
 // Validation for hotel category
