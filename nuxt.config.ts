@@ -37,15 +37,9 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
   ],
   apiParty: {
-    server: {
-      basePath: "https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/",
-    },
     endpoints: {
       rehabAPi: {
         url: "https://my-json-server.typicode.com/Kirolos-Nabil-0/rehab-v3/",
-        headers: {
-          Authorization: `Bearer`,
-        },
       },
     },
   },
