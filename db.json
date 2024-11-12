@@ -3,14 +3,86 @@
     {
       "hotel_id": 1,
       "hotel_location": "Makkah",
-      "hotel_name": "some hotel",
-      "hotel_category": "luxury"
+      "hotel_name": "Some Hotel",
+      "hotel_category": "Luxury"
     },
     {
       "hotel_id": 2,
-      "hotel_location": "Madinnah",
-      "hotel_name": "hotel2",
-      "hotel_category": "luxury"
+      "hotel_location": "Madinah",
+      "hotel_name": "Hotel2",
+      "hotel_category": "Luxury"
+    },
+    {
+      "hotel_id": 3,
+      "hotel_location": "Jeddah",
+      "hotel_name": "Seaside Hotel",
+      "hotel_category": "Standard"
+    },
+    {
+      "hotel_id": 4,
+      "hotel_location": "Riyadh",
+      "hotel_name": "Capital Inn",
+      "hotel_category": "Budget"
+    },
+    {
+      "hotel_id": 5,
+      "hotel_location": "Taif",
+      "hotel_name": "Mountain Resort",
+      "hotel_category": "Luxury"
+    },
+    {
+      "hotel_id": 6,
+      "hotel_location": "Khobar",
+      "hotel_name": "Beachside Inn",
+      "hotel_category": "Standard"
+    },
+    {
+      "hotel_id": 7,
+      "hotel_location": "Makkah",
+      "hotel_name": "Haram Suites",
+      "hotel_category": "Luxury"
+    },
+    {
+      "hotel_id": 8,
+      "hotel_location": "Dammam",
+      "hotel_name": "City Center Hotel",
+      "hotel_category": "Standard"
+    },
+    {
+      "hotel_id": 9,
+      "hotel_location": "Jizan",
+      "hotel_name": "Jizan Harbor Hotel",
+      "hotel_category": "Budget"
+    },
+    {
+      "hotel_id": 10,
+      "hotel_location": "Yanbu",
+      "hotel_name": "Portside Lodge",
+      "hotel_category": "Budget"
+    },
+    {
+      "hotel_id": 11,
+      "hotel_location": "Tabuk",
+      "hotel_name": "Desert Oasis",
+      "hotel_category": "Standard"
+    },
+    {
+      "hotel_id": 12,
+      "hotel_location": "Qassim",
+      "hotel_name": "Central Hotel",
+      "hotel_category": "Budget"
+    },
+    {
+      "hotel_id": 13,
+      "hotel_location": "Jubail",
+      "hotel_name": "Industrial Inn",
+      "hotel_category": "Standard"
+    },
+    {
+      "hotel_id": 14,
+      "hotel_location": "Abha",
+      "hotel_name": "Mountain View Hotel",
+      "hotel_category": "Luxury"
     }
   ],
   "camps": [
@@ -25,6 +97,78 @@
       "camp_name": "الكبش",
       "camp_service_price": 100,
       "camp_kidanah_price": 200
+    },
+    {
+      "camp_id": 3,
+      "camp_name": "الراية",
+      "camp_service_price": 150,
+      "camp_kidanah_price": 250
+    },
+    {
+      "camp_id": 4,
+      "camp_name": "الرمز",
+      "camp_service_price": 120,
+      "camp_kidanah_price": 220
+    },
+    {
+      "camp_id": 5,
+      "camp_name": "النجم",
+      "camp_service_price": 130,
+      "camp_kidanah_price": 230
+    },
+    {
+      "camp_id": 6,
+      "camp_name": "القمر",
+      "camp_service_price": 110,
+      "camp_kidanah_price": 210
+    },
+    {
+      "camp_id": 7,
+      "camp_name": "الشمس",
+      "camp_service_price": 160,
+      "camp_kidanah_price": 260
+    },
+    {
+      "camp_id": 8,
+      "camp_name": "الفجر",
+      "camp_service_price": 140,
+      "camp_kidanah_price": 240
+    },
+    {
+      "camp_id": 9,
+      "camp_name": "الجبال",
+      "camp_service_price": 150,
+      "camp_kidanah_price": 250
+    },
+    {
+      "camp_id": 10,
+      "camp_name": "الوديان",
+      "camp_service_price": 120,
+      "camp_kidanah_price": 220
+    },
+    {
+      "camp_id": 11,
+      "camp_name": "البحر",
+      "camp_service_price": 170,
+      "camp_kidanah_price": 270
+    },
+    {
+      "camp_id": 12,
+      "camp_name": "الصحراء",
+      "camp_service_price": 130,
+      "camp_kidanah_price": 230
+    },
+    {
+      "camp_id": 13,
+      "camp_name": "الوادي",
+      "camp_service_price": 115,
+      "camp_kidanah_price": 215
+    },
+    {
+      "camp_id": 14,
+      "camp_name": "الجوهرة",
+      "camp_service_price": 180,
+      "camp_kidanah_price": 280
     }
   ],
   "routes": [
@@ -41,18 +185,68 @@
     {
       "route_id": 3,
       "camp_id": 1,
-      "camp_route_price": 100
+      "camp_route_price": 150
     },
     {
       "route_id": 4,
       "camp_id": 2,
       "camp_route_price": 200
+    },
+    {
+      "route_id": 5,
+      "camp_id": 3,
+      "camp_route_price": 180
+    },
+    {
+      "route_id": 6,
+      "camp_id": 4,
+      "camp_route_price": 160
+    },
+    {
+      "route_id": 7,
+      "camp_id": 5,
+      "camp_route_price": 130
+    },
+    {
+      "route_id": 8,
+      "camp_id": 6,
+      "camp_route_price": 110
+    },
+    {
+      "route_id": 9,
+      "camp_id": 7,
+      "camp_route_price": 140
+    },
+    {
+      "route_id": 10,
+      "camp_id": 8,
+      "camp_route_price": 150
+    },
+    {
+      "route_id": 11,
+      "camp_id": 9,
+      "camp_route_price": 135
+    },
+    {
+      "route_id": 12,
+      "camp_id": 10,
+      "camp_route_price": 125
+    },
+    {
+      "route_id": 13,
+      "camp_id": 11,
+      "camp_route_price": 175
+    },
+    {
+      "route_id": 14,
+      "camp_id": 12,
+      "camp_route_price": 145
     }
   ],
   "contracts": [
     {
       "hotel_location": "Makkah",
-      "hotel_name": "some hotel",
+      "hotel_name": "Some Hotel",
       "Start_date": "2021-01-01",
       "End_date": "2021-01-10",
       "double_rooms": 10,
@@ -62,6 +256,123 @@
       "quadruple_rooms_price": 200,
       "triple_rooms_price": 300,
       "food_price": 100
+    },
+    {
+      "hotel_location": "Makkah",
+      "hotel_name": "Hotel2",
+      "Start_date": "2021-02-01",
+      "End_date": "2021-02-10",
+      "double_rooms": 20,
+      "quadruple_rooms": 15,
+      "triple_rooms": 12,
+      "double_rooms_price": 110,
+      "quadruple_rooms_price": 220,
+      "triple_rooms_price": 330,
+      "food_price": 120
+    },
+    {
+      "hotel_location": "Jeddah",
+      "hotel_name": "Seaside Hotel",
+      "Start_date": "2021-03-01",
+      "End_date": "2021-03-15",
+      "double_rooms": 15,
+      "quadruple_rooms": 8,
+      "triple_rooms": 5,
+      "double_rooms_price": 90,
+      "quadruple_rooms_price": 180,
+      "triple_rooms_price": 270,
+      "food_price": 95
+    },
+    {
+      "hotel_location": "Riyadh",
+      "hotel_name": "Capital Inn",
+      "Start_date": "2021-04-01",
+      "End_date": "2021-04-10",
+      "double_rooms": 12,
+      "quadruple_rooms": 6,
+      "triple_rooms": 7,
+      "double_rooms_price": 85,
+      "quadruple_rooms_price": 170,
+      "triple_rooms_price": 255,
+      "food_price": 90
+    },
+    {
+      "hotel_location": "Taif",
+      "hotel_name": "Mountain Resort",
+      "Start_date": "2021-05-01",
+      "End_date": "2021-05-15",
+      "double_rooms": 14,
+      "quadruple_rooms": 10,
+      "triple_rooms": 6,
+      "double_rooms_price": 120,
+      "quadruple_rooms_price": 240,
+      "triple_rooms_price": 360,
+      "food_price": 110
+    },
+    {
+      "hotel_location": "Khobar",
+      "hotel_name": "Beachside Inn",
+      "Start_date": "2021-06-01",
+      "End_date": "2021-06-10",
+      "double_rooms": 16,
+      "quadruple_rooms": 12,
+      "triple_rooms": 8,
+      "double_rooms_price": 95,
+      "quadruple_rooms_price": 190,
+      "triple_rooms_price": 285,
+      "food_price": 100
+    },
+    {
+      "hotel_location": "Dammam",
+      "hotel_name": "City Center Hotel",
+      "Start_date": "2021-07-01",
+      "End_date": "2021-07-10",
+      "double_rooms": 18,
+      "quadruple_rooms": 14,
+      "triple_rooms": 9,
+      "double_rooms_price": 90,
+      "quadruple_rooms_price": 180,
+      "triple_rooms_price": 270,
+      "food_price": 95
+    },
+    {
+      "hotel_location": "Jizan",
+      "hotel_name": "Jizan Harbor Hotel",
+      "Start_date": "2021-08-01",
+      "End_date": "2021-08-10",
+      "double_rooms": 10,
+      "quadruple_rooms": 5,
+      "triple_rooms": 7,
+      "double_rooms_price": 80,
+      "quadruple_rooms_price": 160,
+      "triple_rooms_price": 240,
+      "food_price": 85
+    },
+    {
+      "hotel_location": "Yanbu",
+      "hotel_name": "Portside Lodge",
+      "Start_date": "2021-09-01",
+      "End_date": "2021-09-15",
+      "double_rooms": 9,
+      "quadruple_rooms": 6,
+      "triple_rooms": 8,
+      "double_rooms_price": 75,
+      "quadruple_rooms_price": 150,
+      "triple_rooms_price": 225,
+      "food_price": 80
+    },
+    {
+      "hotel_location": "Tabuk",
+      "hotel_name": "Desert Oasis",
+      "Start_date": "2021-10-01",
+      "End_date": "2021-10-10",
+      "double_rooms": 11,
+      "quadruple_rooms": 7,
+      "triple_rooms": 6,
+      "double_rooms_price": 85,
+      "quadruple_rooms_price": 170,
+      "triple_rooms_price": 255,
+      "food_price": 90
     }
   ]
 }
