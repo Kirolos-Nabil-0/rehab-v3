@@ -1,7 +1,6 @@
 <template>
     <!-- Dialog with animations -->
-    <v-dialog v-model="dialogOpen" max-width="600px" transition="dialog-transition" persistent
-        aria-label="Add New Hotel">
+    <v-dialog v-model="dialogOpen" max-width="600px" transition="dialog-transition" aria-label="Add New Hotel">
         <v-card class="dialog-card" :style="{ '--header-gradient': headerGradient }" elevation="2">
             <!-- Dialog Header with Fade-In Animation -->
             <v-card-title class="dialog-header">
@@ -12,9 +11,12 @@
                 <v-spacer></v-spacer>
                 <v-btn icon @click="closeDialog" class="close-button fade-in" :aria-label="'Close'">
                     <v-icon>mdi-close</v-icon>
+
                 </v-btn>
             </v-card-title>
-
+            <v-card-subtitle>
+                <span class="shortcut-info">Press <strong>ESC</strong> to exit Hotel dialog.</span>
+            </v-card-subtitle>
             <!-- Dialog Content with Staggered Animations -->
             <v-card-text>
                 <v-form ref="form" v-model="isFormValid" class="dialog-form">

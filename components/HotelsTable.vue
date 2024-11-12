@@ -203,11 +203,4 @@ const deleteHotel = (hotel) => {
     font-size: 24px;
     font-weight: bold;
 }
-
-.shortcut-info {
-    font-size: 14px;
-    color: #757575;
-    /* Grey color for subtle emphasis */
-    padding-left: 16px;
-}
 </style>
