@@ -11,6 +11,8 @@
                 </v-row>
             </template>
         </Suspense>
+        <HotelStatistics />
+
     </v-container>
 </template>
 

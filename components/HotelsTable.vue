@@ -8,8 +8,7 @@
                 Add Hotel
             </v-btn>
         </v-card-title>
-        <v-data-table :headers="headers" :items="hotels" :items-per-page="5" class="hotels-table" hover
-            :item-class="getRowStyle">
+        <v-data-table :headers="headers" :items="hotels" :items-per-page="5" class="hotels-table" hover>
             <template #header.hotel_name="{ header }">
                 <v-icon small class="mr-1">mdi-bed</v-icon>
                 Hotel Name
@@ -87,7 +86,7 @@ const headers = [
     { text: 'Hotel Name', value: 'hotel_name' },
     { text: 'Location', value: 'hotel_location' },
     { text: 'Category', value: 'hotel_category' },
-    { text: 'Actions', value: 'actions', sortable: false },
+    { text: 'Actions', value: 'actions', sortable: false }
 ];
 
 // Placeholder methods for edit and delete actions
@@ -98,41 +97,8 @@ const editHotel = (hotel) => {
 const deleteHotel = (hotel) => {
     // Implement delete functionality
 };
-const getRowGradient = (category) => {
-    let gradient;
-    if (category === 'building') {
-        gradient = '#ffffff'; // Or any specific color for 'building'
-    } else {
-        const value = Array.isArray(category) ? category[0] : category;
-        switch (value) {
-            case 1:
-                gradient = 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)';
-                break;
-            case 2:
-                gradient = 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)';
-                break;
-            case 3:
-                gradient = 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)';
-                break;
-            case 4:
-                gradient = 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)';
-                break;
-            case 5:
-                gradient = 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)';
-                break;
-            default:
-                gradient = '#ffffff'; // Default color
-                break;
-        }
-    }
-    return gradient;
-};
 
-const getRowStyle = (item) => {
-    return {
-        background: getRowGradient(item.hotel_category),
-    };
-};
+
 </script>
 
 <style scoped>
@@ -162,8 +128,15 @@ const getRowStyle = (item) => {
     padding: 12px 15px;
 }
 
-/* Alternating row colors - Optional, can be removed if using gradients */
+/* Alternating row colors */
+.v-data-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
 
+.v-data-table tbody tr:nth-child(even) {
+    background-color: #f1f8ff;
+    /* Very pale blue */
+}
 
 /* Table borders and dividers */
 .v-data-table {
