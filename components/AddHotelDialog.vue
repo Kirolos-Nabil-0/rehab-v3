@@ -6,7 +6,7 @@
             <!-- Dialog Header with Fade-In Animation -->
             <v-card-title class="dialog-header">
                 <v-icon left large color="white" aria-hidden="true" class="fade-in">
-                    mdi-hotel
+                    mdi-bed
                 </v-icon>
                 <span class="dialog-title fade-in" id="dialog-title">Add New Hotel</span>
                 <v-spacer></v-spacer>
@@ -45,7 +45,7 @@
 
                             <span v-if="hotelCategoryError" class="error-message">{{
                                 hotelCategoryError
-                            }}</span>
+                                }}</span>
                         </div>
                     </transition-group>
                 </v-form>

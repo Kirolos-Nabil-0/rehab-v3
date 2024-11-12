@@ -1,7 +1,7 @@
 <template>
     <v-card class="statistics-card" elevation="2" rounded>
         <v-card-title class="title">
-            <v-icon large color="primary" class="title-icon">mdi-hotel</v-icon>
+            <v-icon large color="primary" class="title-icon">mdi-bed</v-icon>
             <span class="text-h6">Hotel Statistics</span>
         </v-card-title>
         <v-divider></v-divider>
@@ -9,7 +9,7 @@
             <!-- Total Hotels -->
             <v-row>
                 <v-col cols="12" class="stat-item total-hotels">
-                    <v-icon large color="primary" class="stat-icon">mdi-hotel</v-icon>
+                    <v-icon large color="primary" class="stat-icon">mdi-bed</v-icon>
                     <span class="stat-value">{{ totalHotels }}</span>
                     <span class="stat-label">Total Hotels</span>
                 </v-col>
@@ -65,13 +65,24 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { useHotelStore } from '@/stores/useHotelStore';
 
+// Initialize the store
 const hotelStore = useHotelStore();
 
-const totalHotels = hotelStore.totalHotels;
-const hotelsByCategory = hotelStore.hotelsByCategory;
-const hotelsByLocation = hotelStore.hotelsByLocation;
+// Fetch hotel data when the component is mounted
+onMounted(async () => {
+    await hotelStore.fetchHotels();
+});
+
+// Reactive references to store properties
+// const totalHotels = hotelStore.totalHotels
+// const hotelsByCategory = hotelStore.hotelsByCategory;
+// const hotelsByLocation = hotelStore.hotelsByLocation;
+// console.log(hotelsByCategory, hotelsByLocation);
+
+const { totalHotels, hotelsByCategory, hotelsByLocation } = storeToRefs(hotelStore);
 </script>
 
 <style scoped>
