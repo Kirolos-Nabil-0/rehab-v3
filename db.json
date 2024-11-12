@@ -1,85 +1,85 @@
 {
   "hotels": [
     {
-      "hotel_id": 1,
+      "id": 1,
       "hotel_location": "Makkah",
       "hotel_name": "Some Hotel",
       "hotel_category": "Luxury"
     },
     {
-      "hotel_id": 2,
+      "id": 2,
       "hotel_location": "Madinah",
       "hotel_name": "Hotel2",
       "hotel_category": "Luxury"
     },
     {
-      "hotel_id": 3,
+      "id": 3,
       "hotel_location": "Jeddah",
       "hotel_name": "Seaside Hotel",
       "hotel_category": "Standard"
     },
     {
-      "hotel_id": 4,
+      "id": 4,
       "hotel_location": "Riyadh",
       "hotel_name": "Capital Inn",
       "hotel_category": "Budget"
     },
     {
-      "hotel_id": 5,
+      "id": 5,
       "hotel_location": "Taif",
       "hotel_name": "Mountain Resort",
       "hotel_category": "Luxury"
     },
     {
-      "hotel_id": 6,
+      "id": 6,
       "hotel_location": "Khobar",
       "hotel_name": "Beachside Inn",
       "hotel_category": "Standard"
     },
     {
-      "hotel_id": 7,
+      "id": 7,
       "hotel_location": "Makkah",
       "hotel_name": "Haram Suites",
       "hotel_category": "Luxury"
     },
     {
-      "hotel_id": 8,
+      "id": 8,
       "hotel_location": "Dammam",
       "hotel_name": "City Center Hotel",
       "hotel_category": "Standard"
     },
     {
-      "hotel_id": 9,
+      "id": 9,
       "hotel_location": "Jizan",
       "hotel_name": "Jizan Harbor Hotel",
       "hotel_category": "Budget"
     },
     {
-      "hotel_id": 10,
+      "id": 10,
       "hotel_location": "Yanbu",
       "hotel_name": "Portside Lodge",
       "hotel_category": "Budget"
     },
     {
-      "hotel_id": 11,
+      "id": 11,
       "hotel_location": "Tabuk",
       "hotel_name": "Desert Oasis",
       "hotel_category": "Standard"
     },
     {
-      "hotel_id": 12,
+      "id": 12,
       "hotel_location": "Qassim",
       "hotel_name": "Central Hotel",
       "hotel_category": "Budget"
     },
     {
-      "hotel_id": 13,
+      "id": 13,
       "hotel_location": "Jubail",
       "hotel_name": "Industrial Inn",
       "hotel_category": "Standard"
     },
     {
-      "hotel_id": 14,
+      "id": 14,
       "hotel_location": "Abha",
       "hotel_name": "Mountain View Hotel",
       "hotel_category": "Luxury"
