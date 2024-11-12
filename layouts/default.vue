@@ -61,19 +61,16 @@
                     <v-img src="/logo.png" alt="Logo" height="50" class="mx-auto my-4"></v-img>
                 </v-list-item>
 
-                <v-btn icon @click="toggleMiniVariant" class="mx-auto my-2 sidebar-toggle-button">
-                    <v-icon>{{ miniVariant ? 'mdi-menu-open' : 'mdi-menu' }}</v-icon>
-                </v-btn>
 
                 <v-divider class="divider"></v-divider>
 
                 <v-list dense nav>
                     <v-list-item v-for="(item, index) in menuItems" :key="index" :to="item.route" link exact
-                        class="menu-item" :title="item.title" @click="handleMenuItemClick">
+                        class="menu-item" @click="handleMenuItemClick">
                         <v-list-item-icon>
                             <v-icon>{{ item.icon + (item.route === route.path ? '' : '-outline') }}</v-icon>
+                            {{ item.title }}
                         </v-list-item-icon>
-                        <v-list-item-title v-if="!miniVariant">{{ item.title }}</v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-navigation-drawer>
