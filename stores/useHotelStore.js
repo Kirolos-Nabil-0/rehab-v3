@@ -125,6 +125,9 @@ export const useHotelStore = defineStore("hotel", () => {
       return acc;
     }, {});
   });
+  const locations = computed(() => {
+    return hotels.value.map((hotel) => hotel.hotel_location);
+  });
 
   return {
     hotels,
@@ -138,5 +141,6 @@ export const useHotelStore = defineStore("hotel", () => {
     hotelsByCategory,
     hotelsByLocation,
     hotelsByStarRating,
+    locations,
   };
 });

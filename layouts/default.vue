@@ -9,7 +9,7 @@
             <v-spacer></v-spacer>
 
             <!-- Icons Group -->
-            <v-btn icon v-tooltip.bottom="'Help'" class="nav-icon">
+            <v-btn icon v-tooltip.bottom="'Help press CTRL+ Shift + H'" class="nav-icon">
                 <v-icon>mdi-help-circle-outline</v-icon>
             </v-btn>
 
