@@ -7,7 +7,7 @@
 
             <!-- Search Bar -->
             <v-spacer></v-spacer>
-
+            <!-- <v-switch v-model="isTtsEnabled" :label="'Text-to-Speech'" @change="toggleTts" class="mr-4"></v-switch> -->
             <!-- Icons Group -->
             <v-btn icon v-tooltip.bottom="'Help press CTRL+ Shift + H'" class="nav-icon">
                 <v-icon>mdi-help-circle-outline</v-icon>
@@ -96,6 +96,8 @@
 import { ref, computed, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useDisplay } from 'vuetify';
+import { startSpeechRecognition } from '~/utils/speechRecognition.js';
+import { speak } from '~/utils/speechSynthesis.js';
 
 const { smAndDown } = useDisplay();
 const scrollToTop = () => {
@@ -161,23 +163,7 @@ const handleMenuItemClick = () => {
 
 const notificationCount = ref(0); // Example notification count
 
-const cards = [
-    {
-        title: 'Sales Overview',
-        icon: 'mdi-chart-line',
-        description: 'View the latest sales statistics and trends.',
-    },
-    {
-        title: 'User Engagement',
-        icon: 'mdi-account-group',
-        description: 'Monitor user activity and interactions.',
-    },
-    {
-        title: 'System Health',
-        icon: 'mdi-heart-pulse',
-        description: 'Check the status of system components.',
-    },
-];
+
 
 // Watch for screen size changes to adjust the drawer state
 watch(
@@ -186,6 +172,47 @@ watch(
         drawer.value = !newVal;
     }
 );
+
+const commands = {
+    'open dashboard': () => {
+        navigateTo('/');
+        speak('Opening dashboard.');
+    },
+    'open hotels': () => {
+        navigateTo('/hotels');
+        speak('Opening hotels.');
+    },
+    'open profile': () => {
+        navigateTo('/profile');
+        speak('Opening your profile.');
+    },
+    'open notifications': () => {
+        navigateTo('/notifications');
+        speak('Opening notifications.');
+    },
+    logout: () => {
+        logout();
+        speak('Logging out.');
+    },
+    'toggle menu': () => {
+        toggleDrawer();
+        speak('Toggling the menu.');
+    },
+    'scroll to top': () => {
+        scrollToTop();
+        speak('Scrolling to the top.');
+    },
+    'search *query': (query) => {
+        searchQuery.value = query;
+        speak(`Searching for ${query}.`);
+    },
+    help: () => {
+        alert('Help: Use voice commands to navigate the app.');
+        speak('Help: Use voice commands to navigate the app.');
+    },
+};
+// Initialize Speech Recognition
+startSpeechRecognition(commands);
 </script>
 
 <style>
