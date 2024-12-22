@@ -1,4 +1,6 @@
-import Fuse from "fuse.js";
+// ~/utils/speechRecognition.js
+
+import Fuse from "fuse.js"; // If using ES modules and installed via npm
 
 export function startSpeechRecognition(commands) {
   // Check for browser support
@@ -10,9 +12,9 @@ export function startSpeechRecognition(commands) {
   }
 
   const recognition = new SpeechRecognition();
-  recognition.continuous = true;
-  recognition.interimResults = false;
-  recognition.lang = "en-US";
+  recognition.continuous = true; // Keep listening
+  recognition.interimResults = false; // Only final results
+  recognition.lang = "en-US"; // Set language
 
   recognition.onstart = () => {
     console.log("Speech recognition started.");
@@ -24,14 +26,14 @@ export function startSpeechRecognition(commands) {
 
   recognition.onend = () => {
     console.log("Speech recognition ended. Restarting...");
-    recognition.start();
+    recognition.start(); // Restart recognition if it ends
   };
 
   // Prepare commands for Fuse.js
   const commandList = Object.keys(commands).filter((cmd) => !cmd.includes("*"));
   const fuseOptions = {
     includeScore: true,
-    threshold: 0.4,
+    threshold: 0.4, // Adjust based on desired sensitivity
   };
   const fuse = new Fuse(commandList, fuseOptions);
 
@@ -43,9 +45,11 @@ export function startSpeechRecognition(commands) {
 
     console.log("Recognized:", transcript);
 
+    // First, attempt exact and wildcard matches
     let commandExecuted = false;
 
     for (const [command, action] of Object.entries(commands)) {
+      // Handle dynamic commands with wildcards (e.g., 'search *query')
       if (command.includes("*")) {
         const [prefix] = command.split(" ");
         if (transcript.startsWith(prefix)) {
@@ -66,6 +70,7 @@ export function startSpeechRecognition(commands) {
     }
 
     if (!commandExecuted) {
+      // If no exact or wildcard match found, perform fuzzy matching
       const fuzzyResult = fuse.search(transcript);
       if (
         fuzzyResult.length > 0 &&
@@ -83,5 +88,6 @@ export function startSpeechRecognition(commands) {
 
   recognition.start();
 
+  // Optional: Return the recognition instance if you need to control it elsewhere
   return recognition;
 }

@@ -1,3 +1,5 @@
+<!-- layouts/default.vue -->
+
 <template>
     <v-app>
         <!-- Top App Bar -->
@@ -5,10 +7,13 @@
             <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
             <v-toolbar-title>{{ currentPageTitle }}</v-toolbar-title>
 
-            <!-- Search Bar -->
+            <!-- Spacer to push the toggle to the right -->
             <v-spacer></v-spacer>
+
+            <!-- TTS Toggle Switch -->
             <!-- <v-switch v-model="isTtsEnabled" :label="'Text-to-Speech'" @change="toggleTts" class="mr-4"></v-switch> -->
-            <!-- Icons Group -->
+
+            <!-- Help Icon with Tooltip -->
             <v-btn icon v-tooltip.bottom="'Help press CTRL+ Shift + H'" class="nav-icon">
                 <v-icon>mdi-help-circle-outline</v-icon>
             </v-btn>
@@ -61,14 +66,15 @@
                     <v-img src="/logo.png" alt="Logo" height="50" class="mx-auto my-4"></v-img>
                 </v-list-item>
 
-
                 <v-divider class="divider"></v-divider>
 
                 <v-list dense nav>
                     <v-list-item v-for="(item, index) in menuItems" :key="index" :to="item.route" link exact
                         class="menu-item" @click="handleMenuItemClick">
                         <v-list-item-icon>
-                            <v-icon>{{ item.icon + (item.route === route.path ? '' : '-outline') }}</v-icon>
+                            <v-icon>
+                                {{ item.icon + (item.route === route.path ? '' : '-outline') }}
+                            </v-icon>
                             {{ item.title }}
                         </v-list-item-icon>
                     </v-list-item>
@@ -79,8 +85,6 @@
         <!-- Main Content -->
         <v-main>
             <v-container fluid class="main-container">
-
-
                 <NuxtPage />
             </v-container>
         </v-main>
@@ -93,7 +97,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useDisplay } from 'vuetify';
 import { startSpeechRecognition } from '~/utils/speechRecognition.js';
@@ -111,8 +115,7 @@ const route = useRoute();
 
 const menuItems = [
     { title: 'Dashboard', icon: 'mdi-view-dashboard', route: '/' },
-    { title: "hotels", icon: "mdi-bed", route: "/hotels" },
-
+    { title: 'Hotels', icon: 'mdi-bed', route: '/hotels' },
 ];
 
 const navigateTo = (path) => {
@@ -163,8 +166,6 @@ const handleMenuItemClick = () => {
 
 const notificationCount = ref(0); // Example notification count
 
-
-
 // Watch for screen size changes to adjust the drawer state
 watch(
     () => smAndDown.value,
@@ -173,44 +174,76 @@ watch(
     }
 );
 
+// TTS Enabled State
+const isTtsEnabled = ref(true); // Default to enabled
+
+// Load TTS preference from localStorage on mount
+onMounted(() => {
+    const savedTts = localStorage.getItem('isTtsEnabled');
+    if (savedTts !== null) {
+        isTtsEnabled.value = JSON.parse(savedTts);
+    } else {
+        isTtsEnabled.value = true;
+    }
+});
+
+// Function to toggle TTS
+const toggleTts = () => {
+    localStorage.setItem('isTtsEnabled', JSON.stringify(isTtsEnabled.value));
+    if (isTtsEnabled.value) {
+        speak('Text-to-speech has been enabled.');
+    } else {
+        speak('Text-to-speech has been disabled.');
+    }
+};
+
+// Conditional speak function based on TTS state
+function speakIfEnabled(text, options = {}) {
+    if (isTtsEnabled.value) {
+        speak(text, options);
+    }
+}
+
+// Commands for Speech Recognition
 const commands = {
     'open dashboard': () => {
         navigateTo('/');
-        speak('Opening dashboard.');
+        speakIfEnabled('Opening dashboard.');
     },
     'open hotels': () => {
         navigateTo('/hotels');
-        speak('Opening hotels.');
+        speakIfEnabled('Opening hotels.');
     },
     'open profile': () => {
         navigateTo('/profile');
-        speak('Opening your profile.');
+        speakIfEnabled('Opening your profile.');
     },
     'open notifications': () => {
         navigateTo('/notifications');
-        speak('Opening notifications.');
+        speakIfEnabled('Opening notifications.');
     },
     logout: () => {
         logout();
-        speak('Logging out.');
+        speakIfEnabled('Logging out.');
     },
     'toggle menu': () => {
         toggleDrawer();
-        speak('Toggling the menu.');
+        speakIfEnabled('Toggling the menu.');
     },
     'scroll to top': () => {
         scrollToTop();
-        speak('Scrolling to the top.');
+        speakIfEnabled('Scrolling to the top.');
     },
     'search *query': (query) => {
         searchQuery.value = query;
-        speak(`Searching for ${query}.`);
+        speakIfEnabled(`Searching for ${query}.`);
     },
     help: () => {
         alert('Help: Use voice commands to navigate the app.');
-        speak('Help: Use voice commands to navigate the app.');
+        speakIfEnabled('Help: Use voice commands to navigate the app.');
     },
 };
+
 // Initialize Speech Recognition
 startSpeechRecognition(commands);
 </script>
@@ -552,16 +585,15 @@ startSpeechRecognition(commands);
 }
 
 .v-application {
-    min-height: 100vh !important
+    min-height: 100vh !important;
 }
 
 .v-main {
-    flex: 1 0 auto !important
+    flex: 1 0 auto !important;
 }
 
 /* Optional: Adjust the main container to allow the background to show */
 .main-container {
-
     background-image: url('/images/escheresque.png');
     background-size: auto;
     background-repeat: repeat;
@@ -569,5 +601,11 @@ startSpeechRecognition(commands);
     background-attachment: fixed;
     /* Optional: Overlay with a semi-transparent color */
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Align the TTS toggle switch vertically centered */
+.v-switch {
+    display: flex;
+    align-items: center;
 }
 </style>
